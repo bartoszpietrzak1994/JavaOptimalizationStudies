@@ -1,6 +1,8 @@
 package com.company;
 
 import com.company.creator.RandomBinaryFileCreator;
+import com.company.performance.ListPerformanceChecker;
+import com.company.performance.SetsPerformanceChecker;
 import com.company.reader.BufferedFileReader;
 import com.company.reader.FileReader;
 import com.company.reader.MemoryMappedFileReader;
@@ -15,7 +17,13 @@ public class Main {
 
     public static void main(String[] args) throws IOException
     {
-        checkReadersPerformance(100000L, "randomBinary");
+        checkReadersPerformance(10000L, "randomBinary");
+
+        SetsPerformanceChecker setsPerformanceChecker = new SetsPerformanceChecker();
+        setsPerformanceChecker.check(1000);
+
+        ListPerformanceChecker listPerformanceChecker = new ListPerformanceChecker();
+        listPerformanceChecker.check(1000);
     }
 
     private static void checkReadersPerformance(long fileSize, String filePath) throws IOException
