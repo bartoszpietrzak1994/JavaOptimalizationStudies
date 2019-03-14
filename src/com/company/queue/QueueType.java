@@ -1,0 +1,11 @@
+package com.company.queue;
+
+public enum QueueType
+{
+    PRIORITY_QUEUE,
+    LINKED_BLOCKING_QUEUE,
+    ARRAY_BLOCKING_QUEUE,
+    PRIORITY_BLOCKING_QUEUE,
+    SYNCHRONOUS_QUEUE,
+    LINKED_TRANSFER_QUEUE
+}

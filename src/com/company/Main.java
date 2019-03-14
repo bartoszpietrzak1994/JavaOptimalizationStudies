@@ -2,6 +2,7 @@ package com.company;
 
 import com.company.creator.RandomBinaryFileCreator;
 import com.company.performance.ListPerformanceChecker;
+import com.company.performance.QueuePerformanceChecker;
 import com.company.performance.SetsPerformanceChecker;
 import com.company.reader.BufferedFileReader;
 import com.company.reader.FileReader;
@@ -24,6 +25,9 @@ public class Main {
 
         ListPerformanceChecker listPerformanceChecker = new ListPerformanceChecker();
         listPerformanceChecker.check(1000);
+
+        QueuePerformanceChecker queuePerformanceChecker = new QueuePerformanceChecker();
+        queuePerformanceChecker.check(1000);
     }
 
     private static void checkReadersPerformance(long fileSize, String filePath) throws IOException
