@@ -21,7 +21,6 @@ public class QueuePerformanceChecker
         queueFactories.add(new LinkedTransferQueueFactory());
         queueFactories.add(new PriorityBlockingQueueFactory());
         queueFactories.add(new PriorityQueueFactory());
-        queueFactories.add(new SynchronousQueueFactory());
 
         List<QueuePerformanceTestResult> queuePerformanceTestResults = new ArrayList<>();
         Queue<String> performanceTestQueue = null;
@@ -40,7 +39,7 @@ public class QueuePerformanceChecker
 
                 queuePerformanceTestResult.setNumberOfElements(i);
 
-                addElements(performanceTestQueue, i);
+                addElements(performanceTestQueue, i-1);
 
                 System.out.println("Adding element to the end of the list");
                 startTime = System.nanoTime();

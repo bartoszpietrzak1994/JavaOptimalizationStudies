@@ -32,29 +32,14 @@ public class QueuePerformanceTestResult implements PerformanceTestResult
         this.numberOfElements = numberOfElements;
     }
 
-    public long getAddingToTheEndTime()
-    {
-        return addingToTheEndTime;
-    }
-
     public void setAddingToTheEndTime(long addingToTheEndTime)
     {
         this.addingToTheEndTime = addingToTheEndTime;
     }
 
-    public long getRemovingFromEndTime()
-    {
-        return removingFromEndTime;
-    }
-
     public void setRemovingFromEndTime(long removingFromEndTime)
     {
         this.removingFromEndTime = removingFromEndTime;
-    }
-
-    public long getBrowsingWithIteratorTime()
-    {
-        return browsingWithIteratorTime;
     }
 
     public void setBrowsingWithIteratorTime(long browsingWithIteratorTime)
@@ -64,10 +49,10 @@ public class QueuePerformanceTestResult implements PerformanceTestResult
 
     public String toString()
     {
-        return String.format("List getType: %s, number of elements: %s, " +
-                        "time of adding item to the end: %s, " +
-                        "time of removing item from the end: %s, " +
-                        "browsing using iterator: %s",
+        return String.format("Queue getType: %s,\nnumber of elements: %s,\n" +
+                        "time of adding item to the end: %s,\n" +
+                        "time of removing item from the end: %s,\n" +
+                        "browsing using iterator: %s\n",
                 queueType,
                 numberOfElements,
                 addingToTheEndTime,

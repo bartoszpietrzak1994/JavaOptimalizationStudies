@@ -35,19 +35,9 @@ public class ListPerformanceTestResult implements PerformanceTestResult
         this.numberOfElements = numberOfElements;
     }
 
-    public long getAddingToTheBeginningTime()
-    {
-        return addingToTheBeginningTime;
-    }
-
     public void setAddingToTheBeginningTime(long addingToTheBeginningTime)
     {
         this.addingToTheBeginningTime = addingToTheBeginningTime;
-    }
-
-    public long getAddingToTheEndTime()
-    {
-        return addingToTheEndTime;
     }
 
     public void setAddingToTheEndTime(long addingToTheEndTime)
@@ -55,19 +45,9 @@ public class ListPerformanceTestResult implements PerformanceTestResult
         this.addingToTheEndTime = addingToTheEndTime;
     }
 
-    public long getAddingAtRandomPlaceTime()
-    {
-        return addingAtRandomPlaceTime;
-    }
-
     public void setAddingAtRandomPlaceTime(long addingAtRandomPlaceTime)
     {
         this.addingAtRandomPlaceTime = addingAtRandomPlaceTime;
-    }
-
-    public long getRemovingFromBeginningTime()
-    {
-        return removingFromBeginningTime;
     }
 
     public void setRemovingFromBeginningTime(long removingFromBeginningTime)
@@ -75,19 +55,9 @@ public class ListPerformanceTestResult implements PerformanceTestResult
         this.removingFromBeginningTime = removingFromBeginningTime;
     }
 
-    public long getRemovingFromEndTime()
-    {
-        return removingFromEndTime;
-    }
-
     public void setRemovingFromEndTime(long removingFromEndTime)
     {
         this.removingFromEndTime = removingFromEndTime;
-    }
-
-    public long getRemovingFromRandomPlaceTime()
-    {
-        return removingFromRandomPlaceTime;
     }
 
     public void setRemovingFromRandomPlaceTime(long removingFromRandomPlaceTime)
@@ -95,19 +65,9 @@ public class ListPerformanceTestResult implements PerformanceTestResult
         this.removingFromRandomPlaceTime = removingFromRandomPlaceTime;
     }
 
-    public long getBrowsingWithIndexesTime()
-    {
-        return browsingWithIndexesTime;
-    }
-
     public void setBrowsingWithIndexesTime(long browsingWithIndexesTime)
     {
         this.browsingWithIndexesTime = browsingWithIndexesTime;
-    }
-
-    public long getBrowsingWithIteratorTime()
-    {
-        return browsingWithIteratorTime;
     }
 
     public void setBrowsingWithIteratorTime(long browsingWithIteratorTime)
@@ -117,10 +77,10 @@ public class ListPerformanceTestResult implements PerformanceTestResult
 
     public String toString()
     {
-        return String.format("List getType: %s, number of elements: %s, time of adding item to the beginning: %s, " +
-                        "time of adding item to the end: %s, " + "time of adding item at random place: %s, " +
-                        "time of removing item from the beginning: %s, " + "time of removing item from the end: %s, " +
-                        "time of removing item at random place: %s, " + "browsing using indexes: %s, " + "browsing using iterator: %s",
+        return String.format("List type: %s,\nnumber of elements: %s,\ntime of adding item to the beginning: %s,\n" +
+                        "time of adding item to the end: %s,\n" + "time of adding item at random place: %s,\n" +
+                        "time of removing item from the beginning: %s,\n" + "time of removing item from the end: %s,\n" +
+                        "time of removing item at random place: %s,\n" + "browsing using indexes: %s,\n" + "browsing using iterator: %s\n",
                 listType,
                 numberOfElements,
                 addingToTheBeginningTime,

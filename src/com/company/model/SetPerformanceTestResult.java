@@ -31,19 +31,9 @@ public class SetPerformanceTestResult implements PerformanceTestResult
         this.numberOfElements = numberOfElements;
     }
 
-    public long getAddingTime()
-    {
-        return addingTime;
-    }
-
     public void setAddingTime(long addingTime)
     {
         this.addingTime = addingTime;
-    }
-
-    public long getRemovingTime()
-    {
-        return removingTime;
     }
 
     public void setRemovingTime(long removingTime)
@@ -51,19 +41,9 @@ public class SetPerformanceTestResult implements PerformanceTestResult
         this.removingTime = removingTime;
     }
 
-    public long getBrowsingTime()
-    {
-        return browsingTime;
-    }
-
     public void setBrowsingTime(long browsingTime)
     {
         this.browsingTime = browsingTime;
-    }
-
-    public long getCheckingIfElementExistsTime()
-    {
-        return checkingIfElementExistsTime;
     }
 
     public void setCheckingIfElementExistsTime(long checkingIfElementExistsTime)
@@ -73,8 +53,8 @@ public class SetPerformanceTestResult implements PerformanceTestResult
 
     public String toString()
     {
-        return String.format("Set getType: %s, number of elements: %s, time of adding items: %s, time of browsing: %s, " +
-                "time of checking if item exists: %s, time of removing items: %s",
+        return String.format("Set type: %s,\nnumber of elements: %s,\ntime of adding items: %s,\ntime of browsing: %s,\n" +
+                "time of checking if item exists: %s,\ntime of removing items: %s\n",
                 setType,
                 numberOfElements,
                 addingTime,
