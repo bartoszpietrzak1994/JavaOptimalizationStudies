@@ -18,16 +18,16 @@ public class Main {
 
     public static void main(String[] args) throws IOException
     {
-        checkReadersPerformance(10000L, "randomBinary");
+        checkReadersPerformance(500000000L, "randomBinary");
 
-        SetsPerformanceChecker setsPerformanceChecker = new SetsPerformanceChecker();
-        setsPerformanceChecker.check(1000);
-
-        ListPerformanceChecker listPerformanceChecker = new ListPerformanceChecker();
-        listPerformanceChecker.check(1000);
-
-        QueuePerformanceChecker queuePerformanceChecker = new QueuePerformanceChecker();
-        queuePerformanceChecker.check(1000);
+//        SetsPerformanceChecker setsPerformanceChecker = new SetsPerformanceChecker();
+//        setsPerformanceChecker.check(1000);
+//
+//        ListPerformanceChecker listPerformanceChecker = new ListPerformanceChecker();
+//        listPerformanceChecker.check(1000);
+//
+//        QueuePerformanceChecker queuePerformanceChecker = new QueuePerformanceChecker();
+//        queuePerformanceChecker.check(1000);
     }
 
     private static void checkReadersPerformance(long fileSize, String filePath) throws IOException
@@ -46,9 +46,9 @@ public class Main {
             System.out.println(fileReader.getFileReaderType().toString());
             System.out.println();
 
-            long startTime = System.nanoTime();
+            long startTime = System.currentTimeMillis();
             fileReader.read(file);
-            long endTime = System.nanoTime();
+            long endTime = System.currentTimeMillis();
 
             System.out.println(endTime - startTime);
             System.out.println();

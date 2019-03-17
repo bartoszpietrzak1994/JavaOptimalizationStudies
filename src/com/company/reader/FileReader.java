@@ -6,6 +6,6 @@ import java.io.IOException;
 
 public interface FileReader
 {
-    String read(File file) throws IOException;
+    void read(File file) throws IOException;
     FileReaderType getFileReaderType();
 }

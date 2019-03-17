@@ -1,19 +1,22 @@
 package com.company.reader;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
+import java.nio.ByteBuffer;
+import java.nio.channels.FileChannel;
 
 public class NIOFileReader implements FileReader
 {
-    public String read(File file) throws IOException
-    {
-        Path path = Paths.get(file.getAbsolutePath());
-        byte[] bytes = Files.readAllBytes(path);
+    private final static int SIZE = 1024;
 
-        return new String(bytes);
+    public void read(File file) throws IOException
+    {
+        FileChannel in = new FileInputStream(file.getAbsolutePath()).getChannel();
+
+        while (in.read(ByteBuffer.allocate(SIZE)) != -1) {}
+
+        in.close();
     }
 
     @Override

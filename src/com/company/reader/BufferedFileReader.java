@@ -1,25 +1,19 @@
 package com.company.reader;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 
 public class BufferedFileReader implements FileReader
 {
-    public String read(File file) throws IOException
+    final static int SIZE = 1024;
+    private static final byte[] buffer = new byte[SIZE];
+
+    public void read(File file) throws IOException
     {
-        BufferedReader bufferedReader = new BufferedReader(new java.io.FileReader(file.getAbsolutePath()));
+        InputStream in = new FileInputStream(file.getAbsolutePath());
 
-        StringBuffer stringBuffer = new StringBuffer();
-        String line = null;
-
-        while((line = bufferedReader.readLine()) != null) {
-            stringBuffer.append(line);
+        synchronized (buffer) {
+            while ((in.read(buffer)) != -1) {}
         }
-
-        bufferedReader.close();
-
-        return stringBuffer.toString();
     }
 
     @Override

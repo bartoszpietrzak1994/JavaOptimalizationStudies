@@ -1,6 +1,7 @@
 package com.company.reader;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.nio.MappedByteBuffer;
@@ -9,22 +10,18 @@ import java.nio.channels.FileChannel;
 public class MemoryMappedFileReader implements FileReader
 {
     @Override
-    public String read(File file) throws IOException
+    public void read(File file) throws IOException
     {
-        RandomAccessFile randomAccessFile = new RandomAccessFile(file, "r");
+        FileChannel fileChannel = new FileInputStream(file).getChannel();
+        MappedByteBuffer mappedByteBuffer = new RandomAccessFile(file, "r")
+                .getChannel()
+                .map(FileChannel.MapMode.READ_ONLY, 0, file.length());
 
-        FileChannel fileChannel = randomAccessFile.getChannel();
-
-        MappedByteBuffer buffer = fileChannel.map(FileChannel.MapMode.READ_ONLY, 0, fileChannel.size());
-
-        StringBuilder stringBuilder = new StringBuilder();
-
-        for (int i = 0; i < buffer.limit(); i++)
-        {
-            stringBuilder.append(buffer.get());
+        while(mappedByteBuffer.hasRemaining()) {
+            mappedByteBuffer.get();
         }
 
-        return stringBuilder.toString();
+        fileChannel.close();
     }
 
     @Override
